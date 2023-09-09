@@ -1,8 +1,9 @@
 import { StyleSheet, TextStyle,ViewStyle} from 'react-native';
 
 type TClassesStats = {
-    container: ViewStyle;
-    textAlign: TextStyle;
+    container           : ViewStyle;
+    textAlign           : TextStyle;
+    modStatsContainer   : ViewStyle;
 };
 
 const Styles = ():TClassesStats => { 
@@ -14,6 +15,10 @@ const Styles = ():TClassesStats => {
         },
         textAlign:{
             textAlign:'center'
+        },
+        modStatsContainer : {
+            borderColor:'red',
+            borderWidth:1
         }
     });
 };

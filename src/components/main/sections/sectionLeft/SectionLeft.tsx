@@ -1,5 +1,5 @@
-import { TextInput , Text, View, ViewStyle } from 'react-native';
-import Stats from './Stats';
+import { View } from 'react-native';
+import Stats from './sectionComponents/Stats';
 
 const SectionLeft = () => {
     return (

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TextInput , Text, View, ViewStyle } from 'react-native';
-import { RegexSimbol, StatsDataPlayer } from './constStatsData/const.data';
-import Styles from './style/style.stats';
-import setModStats from '../../../../utilis/Utilities';
+import { RegexSimbol, StatsDataPlayer } from '../constStatsData/const.data';
+import Styles from '../style/style.stats';
+import setModStats from '../../../../../utilis/Utilities';
 
 
 const Stats = () => {
@@ -42,7 +42,7 @@ const Stats = () => {
             maxLength={2}
             // editable={!isProcessing}
             />
-            <View>
+            <View style={style.modStatsContainer}>
                 <Text style={style.textAlign}>{getMod && getMod.length > 0 && getMod[index] || 0}</Text>
             </View>
         </View>
