@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { TextInput , Text, View, ViewStyle } from 'react-native';
-import { RegexSimbol, StatsDataPlayer } from '../constStatsData/const.data';
 import Styles from '../style/style.stats';
 import setModStats from '../../../../../utilis/Utilities';
+import { RegexSimbol } from '../../../../../const/Const';
+import { StatsDataPlayer } from '../constStatsData/const.data';
 
 
 const Stats = () => {
     const [getData,setData] = useState<any[]>([]);
     const [getMod,setMod] = useState<any[]>([]);
     const style = Styles();
-
+    console.log(getMod)
     const getStats = (Text:string,key:number):void => {
         let newData:any;
         const checkTest = RegexSimbol.test(Text);
@@ -24,10 +25,12 @@ const Stats = () => {
 
         newData = [...getData];
         newData[key] = Text;
-        setMod(setModStats(newData));
+        if(newData && newData.length > 0) {
+            setMod(setModStats(newData));
+        }
         setData(newData);
     };
-
+    
     return (
     <View style={style.container}>
     {StatsDataPlayer.map((stats,index) => {
@@ -43,7 +46,14 @@ const Stats = () => {
             // editable={!isProcessing}
             />
             <View style={style.modStatsContainer}>
-                <Text style={style.textAlign}>{getMod && getMod.length > 0 && getMod[index] || 0}</Text>
+                <Text style={style.textAlign}>
+                {
+                getMod && getMod.length > 0 ? 
+                    getMod[index] === undefined ? 
+                    -5 : 
+                    getMod[index] :
+                -5
+                }</Text>
             </View>
         </View>
         )

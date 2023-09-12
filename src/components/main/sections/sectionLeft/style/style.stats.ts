@@ -1,9 +1,10 @@
 import { StyleSheet, TextStyle,ViewStyle} from 'react-native';
+import { StylesViewText } from '../../../../../const/Const';
 
-type TClassesStats = {
-    container           : ViewStyle;
-    textAlign           : TextStyle;
-    modStatsContainer   : ViewStyle;
+interface TClassesStats {
+    container           : StylesViewText;
+    textAlign           : StylesViewText;
+    modStatsContainer   : StylesViewText;
 };
 
 const Styles = ():TClassesStats => { 

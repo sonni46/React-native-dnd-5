@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { ViewStyle } from 'react-native';
+import { StylesViewText } from '../../../const/Const';
 
-type TClassesHeader = {
-    container: ViewStyle;
+
+interface TClassesHeader {
+    container: StylesViewText;
 };
 
 const Styles = ():TClassesHeader => { 

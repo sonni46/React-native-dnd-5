@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { StyleProp,ViewStyle } from 'react-native';
+import { StylesViewText } from '../../../const/Const';
 
 type TClassesInfoPlayer = {
-    BoxWithBorder: ViewStyle;
-    ContainerInfo: ViewStyle;
-    Info         : ViewStyle;
+    BoxWithBorder: StylesViewText;
+    ContainerInfo: StylesViewText;
+    Info         : StylesViewText;
 };
 
 const Styles = ():TClassesInfoPlayer => { 
