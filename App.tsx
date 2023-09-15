@@ -15,6 +15,9 @@ export default function App() {
       <View style={styles.container}>
         <Main></Main>
       </View>
+      <View>
+        <Text>prova</Text>
+      </View>
     </ScrollView>
   );
 }

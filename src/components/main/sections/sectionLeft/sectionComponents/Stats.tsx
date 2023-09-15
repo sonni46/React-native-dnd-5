@@ -10,7 +10,6 @@ const Stats = () => {
     const [getData,setData] = useState<any[]>([]);
     const [getMod,setMod] = useState<any[]>([]);
     const style = Styles();
-    console.log(getMod)
     const getStats = (Text:string,key:number):void => {
         let newData:any;
         const checkTest = RegexSimbol.test(Text);
@@ -33,17 +32,17 @@ const Stats = () => {
     
     return (
     <View style={style.container}>
-    {StatsDataPlayer.map((stats,index) => {
+    {StatsDataPlayer && StatsDataPlayer.length > 0 && StatsDataPlayer.map((stats,index) => {
         return (
         <View key={index}>
             <Text style={style.textAlign}>{stats}</Text>
             <TextInput
-            style={style.textAlign}
-            onChangeText={e => getStats(e,index)}
-            // keyboardType="numeric"
-            value={getData && getData.length > 0 && getData[index] || ''}
-            maxLength={2}
-            // editable={!isProcessing}
+                style={style.textAlign}
+                onChangeText={e => getStats(e,index)}
+                // keyboardType="numeric"
+                value={getData && getData.length > 0 && getData[index] || ''}
+                maxLength={2}
+                // editable={!isProcessing}
             />
             <View style={style.modStatsContainer}>
                 <Text style={style.textAlign}>

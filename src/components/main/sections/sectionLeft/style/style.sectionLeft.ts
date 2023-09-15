@@ -6,6 +6,7 @@ interface TClassesSectionLeft {
     IspirationContainer  : StylesViewText;
     StyleCheckButton     : StylesViewText;
     TextStyle            : StylesViewText;
+    CheckButtonContainer : StylesViewText;
 }
 
 const Styles = ():TClassesSectionLeft => { 
@@ -14,9 +15,8 @@ const Styles = ():TClassesSectionLeft => {
             display: 'flex',
             flexDirection: 'row'
         },
-        IspirationContainer: {
-            width: '7.4%',
-            height:'10%',
+        CheckButtonContainer: {
+            width: '35%',
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap'
@@ -25,9 +25,15 @@ const Styles = ():TClassesSectionLeft => {
             width: 30,
             borderColor: 'red',
             borderWidth: 1,
+            justifyContent: 'center',
         },
         TextStyle: {
+            fontSize: 20,
             textAlign : 'center',
+        },
+        IspirationContainer: {
+            display: 'flex',
+            flexDirection: 'row',
         }
     });
 }

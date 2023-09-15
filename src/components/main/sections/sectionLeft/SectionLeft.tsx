@@ -3,31 +3,37 @@ import Stats from './sectionComponents/Stats';
 import Inspiration from './sectionComponents/Inspiration';
 import Styles from './style/style.sectionLeft';
 import { StylesViewText } from '../../../../const/Const';
+import CompetenceBonus from './sectionComponents/CompetenceBonus';
+import SavingThrows from './sectionComponents/SavingThrows';
 
 
 
 const SectionLeft = () => {
     const style = Styles();
 
-    
-    
-    const stylesObj:IStylesObj = {
+    const stylesObj:IStylesObjSectionLeft = {
         StyleCheckButton     : style.StyleCheckButton,
         IspirationContainer  : style.IspirationContainer,
-        TextStyle            : style.TextStyle
+        TextStyle            : style.TextStyle,
+        CheckButtonContainer : style.CheckButtonContainer
     }
 
     return (
     <View style={style.SectionLeftContainer}>
         <Stats></Stats>
-        <Inspiration style={stylesObj}/>
+        <View style={{width:'20%'}}>
+            <Inspiration style={stylesObj}/>
+            <CompetenceBonus/>
+            <SavingThrows/>
+        </View>
     </View>);
 }
 
 export default SectionLeft;
 
-export interface IStylesObj {
-    StyleCheckButton     : StylesViewText;
-    IspirationContainer  : StylesViewText;
-    TextStyle            : StylesViewText;
+export interface IStylesObjSectionLeft {
+    StyleCheckButton     ?: StylesViewText;
+    IspirationContainer  ?: StylesViewText;
+    TextStyle            ?: StylesViewText;
+    CheckButtonContainer ?: StylesViewText;
 }
